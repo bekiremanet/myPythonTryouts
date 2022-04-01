@@ -46,5 +46,37 @@ class remoteControl():
 
 remote_1 = remoteControl()
 
-print(remote_1)
+print("""Smart TV Application\n
+Commands:\n
+1. Sound Up\n
+2. Sound Down\n
+3  Turn Off\n
+4. Turn On\n
+5. Random Channel\n
+6. Add Channel\n
+
+Press "q" to exit the menu.
+""")
+
+while True:
+    command = input("Choose the command:")
+    if(command == "q"):
+        print("Closing the menu.")
+        break
+    if(command == "1"):
+        remote_1.soundUp()
+    elif(command == "2"):
+        remote_1.soundDown()
+    elif(command == "3"):
+        remote_1.tvTurnOff()
+    elif(command == "4"):
+        remote_1.tvTurnOn()
+    elif(command == "5"):
+        remote_1.randomChannel()
+    elif(command == "6"):
+        channels = input("Enter the Channels you want to add, separated by ',':")
+        willBeAdded = channels.split(",")
+        for i in willBeAdded:
+            remote_1.addChannel(i)
+        print("Channel list updated successfully.")
 
